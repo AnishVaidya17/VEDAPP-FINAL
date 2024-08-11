@@ -9,6 +9,7 @@ export { default as SearchContainer } from './SearchContainer'
 export { default as StatItem } from './StatItem'
 export { default as FP_SearchContainer } from './FP_SearchContainer'
 export { default as FP_Container } from './FP_Container'
+export { default as Loading } from './Loading'
 
 const index = () => {
   return (
