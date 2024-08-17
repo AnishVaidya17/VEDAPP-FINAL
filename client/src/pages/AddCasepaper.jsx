@@ -210,15 +210,6 @@ const AddCasepaper = () => {
             //onChange={handleCasepaperInput}
             ></input>
           </div>
-
-
-
-          {/* <div className='form-row'>
-               </div>
-               <div className='form-row'>
-               </div> */}
-
-
         </div>
 
 
@@ -230,7 +221,7 @@ const AddCasepaper = () => {
         <div className="form-center">
           {/* pulse */}
           <div className="form-row">
-            <label type='text' name='pulse' className='form-label'>Pulse</label>
+            <label type='text' name='pulse' className='form-label'>Nadi/Pulse</label>
             <input
               type='text'
               name='pulse'
@@ -319,12 +310,6 @@ const AddCasepaper = () => {
         ></textarea>
 
 
-
-        {/* EMPTY SPACE CODE */}
-        <div className="form-space">
-          <br />
-        </div>
-
         {/* investigations */}
         <label type='text' name='investigations' className='form-label'> Investigations </label>
         <textarea
@@ -336,82 +321,8 @@ const AddCasepaper = () => {
         //onChange={handleCasepaperInput}
         ></textarea>
 
-
-        {/* EMPTY SPACE CODE */}
-        <div className="form-space">
-          <br />
-        </div>
-
-
-
-        {/* DONTS */}
-        <h4 className='diff-h4'>Don'ts</h4>
-        <div className="diff-diet-center">
-          <div className="form-row">
-            <label type='text' name='dontdiet' className='form-label'>Diet</label>
-            <textarea
-              name='dontDiet'
-              className='diff-textarea'
-              rows={20}
-              cols={100}
-            ////value={dontDiet}
-            //onChange={handleCasepaperInput}
-            ></textarea>
-          </div>
-
-          <div className="form-row">
-            <label type='text' name='dontRoutine' className='form-label'>Routine</label>
-            <textarea
-              name='dontRoutine'
-              className='diff-textarea'
-              rows={20}
-              cols={100}
-            ////value={dontRoutine}
-            //onChange={handleCasepaperInput}
-            ></textarea>
-          </div>
-        </div>
-
-
-        {/* DOs */}
-        <h4 className='diff-h4'>Dos</h4>
-        <div className="diff-diet-center">
-          <div className="form-row">
-            <label type='text' name='dodiet' className='form-label'>Diet</label>
-            <textarea
-              name='doDiet'
-              className='diff-textarea'
-              rows={20}
-              cols={100}
-            ////value={doDiet}
-            //onChange={handleCasepaperInput}
-            ></textarea>
-          </div>
-
-          <div className="form-row">
-            <label type='text' name='doRoutine' className='form-label'>Routine</label>
-            <textarea
-              name='doRoutine'
-              className='diff-textarea'
-              rows={20}
-              cols={100}
-            ////value={doRoutine}
-            //onChange={handleCasepaperInput}
-            ></textarea>
-          </div>
-        </div>
-
-        {/* <div className='form-row'>
-          <Link to='/print-diet'>
-            <button className='btn btn-block btn-print'>Print Diet/Routine</button>
-          </Link>
-        </div> */}
-
-
-        {/* EMPTY SPACE CODE */}
-        <div className="form-space">
-          <br />
-        </div>
+        <br />
+        <br />
 
 
         {/* HETU */}
@@ -574,6 +485,68 @@ const AddCasepaper = () => {
             <button className='btn btn-block submit-btn'>Print Chikitsa</button>
           </Link>
         </div> */}
+
+        {/* EMPTY SPACE CODE */}
+        <div className="form-space">
+          <br />
+        </div>
+
+        {/* DONTS */}
+        <h4 className='diff-h4'>Don'ts</h4>
+        <div className="diff-diet-center">
+          <div className="form-row">
+            <label type='text' name='dontdiet' className='form-label'>Diet</label>
+            <textarea
+              name='dontDiet'
+              className='diff-textarea'
+              rows={20}
+              cols={100}
+            ////value={dontDiet}
+            //onChange={handleCasepaperInput}
+            ></textarea>
+          </div>
+
+          <div className="form-row">
+            <label type='text' name='dontRoutine' className='form-label'>Routine</label>
+            <textarea
+              name='dontRoutine'
+              className='diff-textarea'
+              rows={20}
+              cols={100}
+            ////value={dontRoutine}
+            //onChange={handleCasepaperInput}
+            ></textarea>
+          </div>
+        </div>
+
+
+        {/* DOs */}
+        <h4 className='diff-h4'>Dos</h4>
+        <div className="diff-diet-center">
+          <div className="form-row">
+            <label type='text' name='dodiet' className='form-label'>Diet</label>
+            <textarea
+              name='doDiet'
+              className='diff-textarea'
+              rows={20}
+              cols={100}
+            ////value={doDiet}
+            //onChange={handleCasepaperInput}
+            ></textarea>
+          </div>
+
+          <div className="form-row">
+            <label type='text' name='doRoutine' className='form-label'>Routine</label>
+            <textarea
+              name='doRoutine'
+              className='diff-textarea'
+              rows={20}
+              cols={100}
+            ////value={doRoutine}
+            //onChange={handleCasepaperInput}
+            ></textarea>
+          </div>
+        </div>
 
 
         {/* EMPTY SPACE CODE

@@ -28,7 +28,7 @@ export const action = async ({ request, params }) => {
    try {
       await customFetch.patch(`/followuppapers/${params.id}`, data);
       toast.success('Followup Paper edited successfully');
-      return redirect('/dashboard/all-followuppapers');
+      return null;
    } catch (error) {
       toast.error(error?.response?.data?.msg);
       return error;

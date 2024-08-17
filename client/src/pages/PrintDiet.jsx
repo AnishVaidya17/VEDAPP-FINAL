@@ -6,6 +6,9 @@ import customFetch from '../utils/customFetch';
 
 import Wrapper from '../assets/wrappers/DashboardFormPage'
 
+import day from 'dayjs';
+import advancedFormat from 'dayjs/plugin/advancedFormat';
+day.extend(advancedFormat);
 
 //LOADER - PRINT CASEPAPER DIET
 export const loader = async ({ params }) => {
@@ -33,14 +36,16 @@ const PrintDiet = () => {
     const navigate = useNavigate()
 
     const vari = {
-        date: new Date().toJSON().slice(0, 10)
+        date: new Date().toJSON()
     }
+    const date_created = day(vari.date)?.format('MMM Do, YYYY');
+    console.log(date_created);
 
     return (
         <Wrapper>
             <h3>Dr. Vaidya Ayurveda Clinic</h3>
-            <h4>Diet and Routine for {casepaper.name} {casepaper.middlename} {casepaper.lastname}</h4>
-            <h5>Date: {vari.date}</h5>
+            <h4>{casepaper.name} {casepaper.middlename} {casepaper.lastname}</h4>
+            <h5>Date: {date_created}</h5>
             {/* DONTS */}
             <h4 className='diff-h4'>Don'ts</h4>
             <div className="diff-center">
@@ -48,7 +53,7 @@ const PrintDiet = () => {
                     <label type='text' name='dontdiet' className='form-label'>Diet</label>
                     <textarea
                         name='dontDiet'
-                        className='diff-diff-textarea'
+                        className='diff-diet-textarea'
                         rows={20}
                         cols={100}
                         defaultValue={casepaper.dontDiet}
@@ -60,7 +65,7 @@ const PrintDiet = () => {
                     <label type='text' name='dontRoutine' className='form-label'>Routine</label>
                     <textarea
                         name='dontRoutine'
-                        className='diff-diff-textarea'
+                        className='diff-diet-textarea'
                         rows={20}
                         cols={100}
                         defaultValue={casepaper.dontRoutine}
@@ -75,7 +80,7 @@ const PrintDiet = () => {
                     <label type='text' name='dodiet' className='form-label'>Diet</label>
                     <textarea
                         name='doDiet'
-                        className='diff-diff-textarea'
+                        className='diff-diet-textarea'
                         rows={20}
                         cols={100}
                         defaultValue={casepaper.doDiet}
@@ -87,7 +92,7 @@ const PrintDiet = () => {
                     <label type='text' name='doRoutine' className='form-label'>Routine</label>
                     <textarea
                         name='doRoutine'
-                        className='diff-diff-textarea'
+                        className='diff-diet-textarea'
                         rows={20}
                         cols={100}
                         defaultValue={casepaper.doRoutine}

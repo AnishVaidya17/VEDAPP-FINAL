@@ -26,7 +26,7 @@ export const action = async ({ request, params }) => {
    try {
       await customFetch.patch(`/casepapers/${params.id}`, data);
       toast.success('Casepaper edited successfully');
-      return redirect('/dashboard/');
+      return null;
    } catch (error) {
       toast.error(error.response.data.msg);
       return error;
@@ -234,7 +234,7 @@ const EditCasepaper = () => {
             <div className="form-center">
                {/* pulse */}
                <div className="form-row">
-                  <label type='text' name='pulse' className='form-label'>Pulse</label>
+                  <label type='text' name='pulse' className='form-label'>Nadi/Pulse</label>
                   <input
                      type='text'
                      name='pulse'
@@ -317,10 +317,6 @@ const EditCasepaper = () => {
 
 
 
-            {/* EMPTY SPACE CODE */}
-            <div className="form-space">
-               <br />
-            </div>
 
             {/* investigations */}
             <label type='text' name='investigations' className='form-label'> Investigations </label>
@@ -332,78 +328,8 @@ const EditCasepaper = () => {
                defaultValue={casepaper.investigations}
             ></textarea>
 
-
-            {/* EMPTY SPACE CODE */}
-            <div className="form-space">
-               <br />
-            </div>
-
-
-
-            {/* DONTS */}
-            <h4 className='diff-h4'>Don'ts</h4>
-            <div className="diff-diet-center">
-               <div className="form-row">
-                  <label type='text' name='dontdiet' className='form-label'>Diet</label>
-                  <textarea
-                     name='dontDiet'
-                     className='diff-textarea'
-                     rows={20}
-                     cols={100}
-                     defaultValue={casepaper.dontDiet}
-                  ></textarea>
-               </div>
-
-               <div className="form-row">
-                  <label type='text' name='dontRoutine' className='form-label'>Routine</label>
-                  <textarea
-                     name='dontRoutine'
-                     className='diff-textarea'
-                     rows={20}
-                     cols={100}
-                     defaultValue={casepaper.dontRoutine}
-                  ></textarea>
-               </div>
-            </div>
-
-
-            {/* DOs */}
-            <h4 className='diff-h4'>Dos</h4>
-            <div className="diff-diet-center">
-               <div className="form-row">
-                  <label type='text' name='dodiet' className='form-label'>Diet</label>
-                  <textarea
-                     name='doDiet'
-                     className='diff-textarea'
-                     rows={20}
-                     cols={100}
-                     defaultValue={casepaper.doDiet}
-                  ></textarea>
-               </div>
-
-               <div className="form-row">
-                  <label type='text' name='doRoutine' className='form-label'>Routine</label>
-                  <textarea
-                     name='doRoutine'
-                     className='diff-textarea'
-                     rows={20}
-                     cols={100}
-                     defaultValue={casepaper.doRoutine}
-                  ></textarea>
-               </div>
-            </div>
-
-            <div className='form-row'>
-               <Link to={`/print-diet/${casepaper._id}`}>
-                  <button className='btn btn-block btn-print'>Print Diet/Routine</button>
-               </Link>
-            </div>
-
-
-            {/* EMPTY SPACE CODE */}
-            <div className="form-space">
-               <br />
-            </div>
+            <br />
+            <br />
 
 
             {/* HETU */}
@@ -555,7 +481,7 @@ const EditCasepaper = () => {
             {/* for printing Chikitsa */}
             <div className='btn-print'>
                <Link to={`/print-casepaper-chikitsa/${casepaper._id}`}>
-                  <button className='btn btn-block submit-btn'>Print Chikitsa</button>
+                  <button type='button' className='btn btn-block submit-btn'>Print Chikitsa</button>
                </Link>
             </div>
 
@@ -564,6 +490,72 @@ const EditCasepaper = () => {
             <div className="form-space">
                <br />
             </div>
+
+            {/* DONTS */}
+            <h4 className='diff-h4'>Don'ts</h4>
+            <div className="diff-diet-center">
+               <div className="form-row">
+                  <label type='text' name='dontdiet' className='form-label'>Diet</label>
+                  <textarea
+                     name='dontDiet'
+                     className='diff-textarea'
+                     rows={20}
+                     cols={100}
+                     defaultValue={casepaper.dontDiet}
+                  ></textarea>
+               </div>
+
+               <div className="form-row">
+                  <label type='text' name='dontRoutine' className='form-label'>Routine</label>
+                  <textarea
+                     name='dontRoutine'
+                     className='diff-textarea'
+                     rows={20}
+                     cols={100}
+                     defaultValue={casepaper.dontRoutine}
+                  ></textarea>
+               </div>
+            </div>
+
+
+            {/* DOs */}
+            <h4 className='diff-h4'>Dos</h4>
+            <div className="diff-diet-center">
+               <div className="form-row">
+                  <label type='text' name='dodiet' className='form-label'>Diet</label>
+                  <textarea
+                     name='doDiet'
+                     className='diff-textarea'
+                     rows={20}
+                     cols={100}
+                     defaultValue={casepaper.doDiet}
+                  ></textarea>
+               </div>
+
+               <div className="form-row">
+                  <label type='text' name='doRoutine' className='form-label'>Routine</label>
+                  <textarea
+                     name='doRoutine'
+                     className='diff-textarea'
+                     rows={20}
+                     cols={100}
+                     defaultValue={casepaper.doRoutine}
+                  ></textarea>
+               </div>
+            </div>
+
+            <div className='form-row'>
+               <Link to={`/print-diet/${casepaper._id}`}>
+                  <button type="button" className='btn btn-block btn-print'>Print Diet/Routine</button>
+               </Link>
+            </div>
+
+            {/* EMPTY SPACE CODE */}
+            <div className="form-space">
+               <br />
+            </div>
+
+
 
             {/* SANPRAPTI */}
             <div className="form-row">
