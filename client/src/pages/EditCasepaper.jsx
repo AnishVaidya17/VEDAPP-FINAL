@@ -208,7 +208,7 @@ const EditCasepaper = () => {
                <div className='form-row'>
                   <label type='text' name='casepaperNumber' className='form-label'>CP no.</label>
                   <input
-                     type='number'
+                     type='text'
                      name='casepaperNumber'
                      className='form-input'
                      defaultValue={casepaper.casepaperNumber}

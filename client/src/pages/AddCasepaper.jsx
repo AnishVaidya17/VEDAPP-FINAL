@@ -5,13 +5,25 @@ import { Link, useOutlet, useOutletContext } from 'react-router-dom'
 import { Form, useNavigation, redirect } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import customFetch from '../utils/customFetch';
+import { useLoaderData } from 'react-router-dom';
+
+//LOADER - GET HIGHEST CASEPAPER NUMBER 
+export const loader = async () => {
+  try {
+    const { data } = await customFetch.get(`/casepapers/add-casepaper`);
+    return data.casepaper;
+  } catch (error) {
+    toast.error(error.response.data.msg);
+    return redirect('/dashboard/');
+  }
+}
 
 
 //ACTION - ADDCASEPAPER
 export const action = async ({ request }) => {
   const formData = await request.formData()
   const data = Object.fromEntries(formData)
-  console.log(data);
+  //console.log(data);
   try {
     await customFetch.post('/casepapers/', data);
     toast.success('Added Casepaper successfully');
@@ -38,7 +50,14 @@ const AddCasepaper = () => {
     window.scroll(0, 0, "smooth")
   }, [])
 
-
+  const { casepaperNumber } = useLoaderData();
+  console.log(casepaperNumber);
+  let intValue = +casepaperNumber
+  let addedValue = intValue+1
+  let stringValue = addedValue.toString()
+  console.log(addedValue);
+  
+  
 
   return (
     <Wrapper>
@@ -203,9 +222,10 @@ const AddCasepaper = () => {
           <div className='form-row'>
             <label type='text' name='casepaperNumber' className='form-label'>CP no.</label>
             <input
-              type='number'
+              type='text'
               name='casepaperNumber'
               className='form-input'
+              defaultValue={stringValue}
             ////value={casepaperNumber}
             //onChange={handleCasepaperInput}
             ></input>

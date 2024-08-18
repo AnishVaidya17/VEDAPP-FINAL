@@ -39,6 +39,7 @@ import { loader as editFollowuppaperLoader } from './pages/EditFollowuppaper'
 import { action as editFollowuppaperAction } from './pages/EditFollowuppaper'
 import { action as deleteFollowuppaperAction } from './pages/DeleteFollowuppaper'
 import { loader as printFollowuppaperChikitsaLoader } from './pages/PrintFollowuppaperChikitsa'
+import { loader as addCasepaperLoader } from './pages/AddCasepaper'
 
 
 //default theme check
@@ -102,6 +103,7 @@ const router = createBrowserRouter([
                   path: 'add-casepaper',
                   element: <AddCasepaper />,
                   action: addcasepaperAction,
+                  loader: addCasepaperLoader
                },
                {
                   path: 'all-followuppapers',
