@@ -291,7 +291,7 @@ const AddCasepaper = () => {
         <label type='text' name='chestExam' className='form-label'>Chest Exam</label>
         <textarea
           name='chestExam'
-          className='form-textarea-two'
+          className='form-textarea-small'
           rows={20}
           cols={100}
         ////value={chestExam}
@@ -302,7 +302,7 @@ const AddCasepaper = () => {
         <label type='text' name='abdominalExam' className='form-label'>Abdominal Exam </label>
         <textarea
           name='abdominalExam'
-          className='form-textarea-two'
+          className='form-textarea-small'
           rows={20}
           cols={100}
         ////value={abdominalExam}
@@ -314,7 +314,7 @@ const AddCasepaper = () => {
         <label type='text' name='investigations' className='form-label'> Investigations </label>
         <textarea
           name='investigations'
-          className='form-textarea-two'
+          className='form-textarea-small'
           rows={20}
           cols={100}
         ////value={investigations}
@@ -471,7 +471,7 @@ const AddCasepaper = () => {
           <label type='text' name='chikitsa' className='form-label'>Chikitsa</label>
           <textarea
             name='chikitsa'
-            className='diff-textarea'
+            className='diff-textarea-big'
             rows={20}
             cols={100}
           //value={chikitsa}
@@ -498,7 +498,7 @@ const AddCasepaper = () => {
             <label type='text' name='dontdiet' className='form-label'>Diet</label>
             <textarea
               name='dontDiet'
-              className='diff-textarea'
+              className='diff-textarea-small'
               rows={20}
               cols={100}
             ////value={dontDiet}
@@ -510,7 +510,7 @@ const AddCasepaper = () => {
             <label type='text' name='dontRoutine' className='form-label'>Routine</label>
             <textarea
               name='dontRoutine'
-              className='diff-textarea'
+              className='diff-textarea-small'
               rows={20}
               cols={100}
             ////value={dontRoutine}
@@ -527,7 +527,7 @@ const AddCasepaper = () => {
             <label type='text' name='dodiet' className='form-label'>Diet</label>
             <textarea
               name='doDiet'
-              className='diff-textarea'
+              className='diff-textarea-small'
               rows={20}
               cols={100}
             ////value={doDiet}
@@ -539,7 +539,7 @@ const AddCasepaper = () => {
             <label type='text' name='doRoutine' className='form-label'>Routine</label>
             <textarea
               name='doRoutine'
-              className='diff-textarea'
+              className='diff-textarea-small'
               rows={20}
               cols={100}
             ////value={doRoutine}
@@ -559,7 +559,7 @@ const AddCasepaper = () => {
           <label type='text' name='sanprapti' className='form-label'>Sanprapti</label>
           <textarea
             name='sanprapti'
-            className='diff-textarea'
+            className='form-textarea-small'
             rows={20}
             cols={100}
           //value={sanprapti}

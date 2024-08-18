@@ -299,7 +299,7 @@ const EditCasepaper = () => {
             <label type='text' name='chestExam' className='form-label'>Chest Exam</label>
             <textarea
                name='chestExam'
-               className='form-textarea-two'
+               className='form-textarea-small'
                rows={20}
                cols={100}
                defaultValue={casepaper.chestExam}
@@ -309,7 +309,7 @@ const EditCasepaper = () => {
             <label type='text' name='abdominalExam' className='form-label'>Abdominal Exam </label>
             <textarea
                name='abdominalExam'
-               className='form-textarea-two'
+               className='form-textarea-small'
                rows={20}
                cols={100}
                defaultValue={casepaper.abdominalExam}
@@ -322,7 +322,7 @@ const EditCasepaper = () => {
             <label type='text' name='investigations' className='form-label'> Investigations </label>
             <textarea
                name='investigations'
-               className='form-textarea-two'
+               className='form-textarea-small'
                rows={20}
                cols={100}
                defaultValue={casepaper.investigations}
@@ -471,7 +471,7 @@ const EditCasepaper = () => {
                <label type='text' name='chikitsa' className='form-label'>Chikitsa</label>
                <textarea
                   name='chikitsa'
-                  className='diff-textarea'
+                  className='diff-textarea-big'
                   rows={20}
                   cols={100}
                   defaultValue={casepaper.chikitsa}
@@ -498,7 +498,7 @@ const EditCasepaper = () => {
                   <label type='text' name='dontdiet' className='form-label'>Diet</label>
                   <textarea
                      name='dontDiet'
-                     className='diff-textarea'
+                     className='diff-textarea-small'
                      rows={20}
                      cols={100}
                      defaultValue={casepaper.dontDiet}
@@ -509,7 +509,7 @@ const EditCasepaper = () => {
                   <label type='text' name='dontRoutine' className='form-label'>Routine</label>
                   <textarea
                      name='dontRoutine'
-                     className='diff-textarea'
+                     className='diff-textarea-small'
                      rows={20}
                      cols={100}
                      defaultValue={casepaper.dontRoutine}
@@ -525,7 +525,7 @@ const EditCasepaper = () => {
                   <label type='text' name='dodiet' className='form-label'>Diet</label>
                   <textarea
                      name='doDiet'
-                     className='diff-textarea'
+                     className='diff-textarea-small'
                      rows={20}
                      cols={100}
                      defaultValue={casepaper.doDiet}
@@ -536,7 +536,7 @@ const EditCasepaper = () => {
                   <label type='text' name='doRoutine' className='form-label'>Routine</label>
                   <textarea
                      name='doRoutine'
-                     className='diff-textarea'
+                     className='diff-textarea-small'
                      rows={20}
                      cols={100}
                      defaultValue={casepaper.doRoutine}
@@ -562,7 +562,7 @@ const EditCasepaper = () => {
                <label type='text' name='sanprapti' className='form-label'>Sanprapti</label>
                <textarea
                   name='sanprapti'
-                  className='diff-textarea'
+                  className='diff-textarea-small'
                   rows={20}
                   cols={100}
                   defaultValue={casepaper.sanprapti}

@@ -15,7 +15,7 @@ const CasepapersContainer = () => {
   }
   return (
     <Wrapper>
-      {/* <h5>{totalCasepapers} casepaper{totalCasepapers > 1 && 's'} found</h5> */}
+      <h5>{totalCasepapers} casepaper{totalCasepapers > 1 && 's'} found</h5>
       <div className="casepapers">
         {casepapers.map((casepaper) => {
           return <Casepaper key={casepaper._id}{...casepaper} />

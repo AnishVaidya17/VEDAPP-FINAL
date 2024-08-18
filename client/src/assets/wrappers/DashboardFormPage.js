@@ -165,6 +165,17 @@ const Wrapper = styled.section`
     color: var(--textColor)
   }
 
+  .form-textarea-small {
+    height: 5rem;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid black;
+    border-radius: 5px;
+    background: var(--backgroundColor);
+    border: 1px solid var(--grey-200);  
+    color: var(--textColor)
+  }
+
 
   .followupcontent {
     display: grid;
