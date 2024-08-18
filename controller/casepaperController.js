@@ -17,7 +17,8 @@ export const getAllCasepapers = async (req, res) => {
     if (queryName) {
         queryObject.$or = [
             { name: { $regex: queryName, $options: 'i' } },
-            { middlename: { $regex: queryName, $options: 'i' } }
+            { lastname: { $regex: queryName, $options: 'i' } },
+            {casepaperNumber: {$regex: queryName, $options: 'i'}}
         ]
         console.log(queryObject);
     }
@@ -30,7 +31,7 @@ export const getAllCasepapers = async (req, res) => {
     const totalCasepapers = await Casepaper.countDocuments(queryObject);
     const numOfPages = Math.ceil(totalCasepapers / limit);
 
-    res.status(StatusCodes.OK).json({ totalCasepapers: totalCasepapers, numOfPages: numOfPages,  currentPage: page, casepapers })
+    res.status(StatusCodes.OK).json({ totalCasepapers: totalCasepapers, numOfPages: numOfPages, currentPage: page, casepapers })
 
 }
 
@@ -42,6 +43,19 @@ export const getCasepaper = async (req, res) => {
         return res.status(StatusCodes.NOT_FOUND).json({ msg: `no casepaper with id ${id}` });
     }
     res.status(200).json({ casepaper });
+};
+
+
+//GET HIGHEST CASEPAPER NUMBER
+export const getHighestCasepaperNumber = async (req, res) => {
+    const casepapers = await Casepaper.findOne({}).sort({ casepaperNumber: -1 })
+    let casepaper = casepapers
+    if(casepapers){
+        res.status(StatusCodes.OK).json({ casepaper })
+    }
+    else {
+        res.status(StatusCodes.OK).json({casepaper:0})
+    }
 };
 
 

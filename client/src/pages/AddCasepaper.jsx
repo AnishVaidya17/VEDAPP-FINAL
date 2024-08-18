@@ -5,13 +5,25 @@ import { Link, useOutlet, useOutletContext } from 'react-router-dom'
 import { Form, useNavigation, redirect } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import customFetch from '../utils/customFetch';
+import { useLoaderData } from 'react-router-dom';
+
+//LOADER - GET HIGHEST CASEPAPER NUMBER 
+export const loader = async () => {
+  try {
+    const { data } = await customFetch.get(`/casepapers/add-casepaper`);
+    return data.casepaper;
+  } catch (error) {
+    toast.error(error.response.data.msg);
+    return redirect('/dashboard/');
+  }
+}
 
 
 //ACTION - ADDCASEPAPER
 export const action = async ({ request }) => {
   const formData = await request.formData()
   const data = Object.fromEntries(formData)
-  console.log(data);
+  //console.log(data);
   try {
     await customFetch.post('/casepapers/', data);
     toast.success('Added Casepaper successfully');
@@ -38,7 +50,14 @@ const AddCasepaper = () => {
     window.scroll(0, 0, "smooth")
   }, [])
 
-
+  const { casepaperNumber } = useLoaderData();
+  console.log(casepaperNumber);
+  let intValue = +casepaperNumber
+  let addedValue = intValue+1
+  let stringValue = addedValue.toString()
+  console.log(addedValue);
+  
+  
 
   return (
     <Wrapper>
@@ -203,22 +222,14 @@ const AddCasepaper = () => {
           <div className='form-row'>
             <label type='text' name='casepaperNumber' className='form-label'>CP no.</label>
             <input
-              type='number'
+              type='text'
               name='casepaperNumber'
               className='form-input'
+              defaultValue={stringValue}
             ////value={casepaperNumber}
             //onChange={handleCasepaperInput}
             ></input>
           </div>
-
-
-
-          {/* <div className='form-row'>
-               </div>
-               <div className='form-row'>
-               </div> */}
-
-
         </div>
 
 
@@ -230,7 +241,7 @@ const AddCasepaper = () => {
         <div className="form-center">
           {/* pulse */}
           <div className="form-row">
-            <label type='text' name='pulse' className='form-label'>Pulse</label>
+            <label type='text' name='pulse' className='form-label'>Nadi/Pulse</label>
             <input
               type='text'
               name='pulse'
@@ -300,7 +311,7 @@ const AddCasepaper = () => {
         <label type='text' name='chestExam' className='form-label'>Chest Exam</label>
         <textarea
           name='chestExam'
-          className='form-textarea-two'
+          className='form-textarea-small'
           rows={20}
           cols={100}
         ////value={chestExam}
@@ -311,7 +322,7 @@ const AddCasepaper = () => {
         <label type='text' name='abdominalExam' className='form-label'>Abdominal Exam </label>
         <textarea
           name='abdominalExam'
-          className='form-textarea-two'
+          className='form-textarea-small'
           rows={20}
           cols={100}
         ////value={abdominalExam}
@@ -319,99 +330,19 @@ const AddCasepaper = () => {
         ></textarea>
 
 
-
-        {/* EMPTY SPACE CODE */}
-        <div className="form-space">
-          <br />
-        </div>
-
         {/* investigations */}
         <label type='text' name='investigations' className='form-label'> Investigations </label>
         <textarea
           name='investigations'
-          className='form-textarea-two'
+          className='form-textarea-small'
           rows={20}
           cols={100}
         ////value={investigations}
         //onChange={handleCasepaperInput}
         ></textarea>
 
-
-        {/* EMPTY SPACE CODE */}
-        <div className="form-space">
-          <br />
-        </div>
-
-
-
-        {/* DONTS */}
-        <h4 className='diff-h4'>Don'ts</h4>
-        <div className="diff-diet-center">
-          <div className="form-row">
-            <label type='text' name='dontdiet' className='form-label'>Diet</label>
-            <textarea
-              name='dontDiet'
-              className='diff-textarea'
-              rows={20}
-              cols={100}
-            ////value={dontDiet}
-            //onChange={handleCasepaperInput}
-            ></textarea>
-          </div>
-
-          <div className="form-row">
-            <label type='text' name='dontRoutine' className='form-label'>Routine</label>
-            <textarea
-              name='dontRoutine'
-              className='diff-textarea'
-              rows={20}
-              cols={100}
-            ////value={dontRoutine}
-            //onChange={handleCasepaperInput}
-            ></textarea>
-          </div>
-        </div>
-
-
-        {/* DOs */}
-        <h4 className='diff-h4'>Dos</h4>
-        <div className="diff-diet-center">
-          <div className="form-row">
-            <label type='text' name='dodiet' className='form-label'>Diet</label>
-            <textarea
-              name='doDiet'
-              className='diff-textarea'
-              rows={20}
-              cols={100}
-            ////value={doDiet}
-            //onChange={handleCasepaperInput}
-            ></textarea>
-          </div>
-
-          <div className="form-row">
-            <label type='text' name='doRoutine' className='form-label'>Routine</label>
-            <textarea
-              name='doRoutine'
-              className='diff-textarea'
-              rows={20}
-              cols={100}
-            ////value={doRoutine}
-            //onChange={handleCasepaperInput}
-            ></textarea>
-          </div>
-        </div>
-
-        {/* <div className='form-row'>
-          <Link to='/print-diet'>
-            <button className='btn btn-block btn-print'>Print Diet/Routine</button>
-          </Link>
-        </div> */}
-
-
-        {/* EMPTY SPACE CODE */}
-        <div className="form-space">
-          <br />
-        </div>
+        <br />
+        <br />
 
 
         {/* HETU */}
@@ -560,7 +491,7 @@ const AddCasepaper = () => {
           <label type='text' name='chikitsa' className='form-label'>Chikitsa</label>
           <textarea
             name='chikitsa'
-            className='diff-textarea'
+            className='diff-textarea-big'
             rows={20}
             cols={100}
           //value={chikitsa}
@@ -575,6 +506,68 @@ const AddCasepaper = () => {
           </Link>
         </div> */}
 
+        {/* EMPTY SPACE CODE */}
+        <div className="form-space">
+          <br />
+        </div>
+
+        {/* DONTS */}
+        <h4 className='diff-h4'>Don'ts</h4>
+        <div className="diff-diet-center">
+          <div className="form-row">
+            <label type='text' name='dontdiet' className='form-label'>Diet</label>
+            <textarea
+              name='dontDiet'
+              className='diff-textarea-small'
+              rows={20}
+              cols={100}
+            ////value={dontDiet}
+            //onChange={handleCasepaperInput}
+            ></textarea>
+          </div>
+
+          <div className="form-row">
+            <label type='text' name='dontRoutine' className='form-label'>Routine</label>
+            <textarea
+              name='dontRoutine'
+              className='diff-textarea-small'
+              rows={20}
+              cols={100}
+            ////value={dontRoutine}
+            //onChange={handleCasepaperInput}
+            ></textarea>
+          </div>
+        </div>
+
+
+        {/* DOs */}
+        <h4 className='diff-h4'>Dos</h4>
+        <div className="diff-diet-center">
+          <div className="form-row">
+            <label type='text' name='dodiet' className='form-label'>Diet</label>
+            <textarea
+              name='doDiet'
+              className='diff-textarea-small'
+              rows={20}
+              cols={100}
+            ////value={doDiet}
+            //onChange={handleCasepaperInput}
+            ></textarea>
+          </div>
+
+          <div className="form-row">
+            <label type='text' name='doRoutine' className='form-label'>Routine</label>
+            <textarea
+              name='doRoutine'
+              className='diff-textarea-small'
+              rows={20}
+              cols={100}
+            ////value={doRoutine}
+            //onChange={handleCasepaperInput}
+            ></textarea>
+          </div>
+        </div>
+
 
         {/* EMPTY SPACE CODE
         <div className="form-space">
@@ -586,7 +579,7 @@ const AddCasepaper = () => {
           <label type='text' name='sanprapti' className='form-label'>Sanprapti</label>
           <textarea
             name='sanprapti'
-            className='diff-textarea'
+            className='form-textarea-small'
             rows={20}
             cols={100}
           //value={sanprapti}

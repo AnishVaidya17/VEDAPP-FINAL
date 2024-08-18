@@ -35,7 +35,7 @@ const CasepaperSchema = new mongoose.Schema({
         type: Date,
         // default: new Date().toJSON().slice(0,10)
     },
-    casepaperNumber: { type: Number },
+    casepaperNumber: { type: String },
 
     pulse: { type: String },
     bloodPressure: { type: String },

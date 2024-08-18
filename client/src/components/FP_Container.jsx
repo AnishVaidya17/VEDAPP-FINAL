@@ -17,7 +17,7 @@ const FP_Container = () => {
 
   return (
     <Wrapper>
-      
+      <h5>{totalFollowuppapers} followup paper{totalFollowuppapers > 1 && 's'} found</h5>
       <div className="casepapers">
         {followuppapers.map((followuppaper) => {
           return <FollowupPaper key={followuppaper._id}{...followuppaper} />

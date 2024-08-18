@@ -319,7 +319,37 @@ ul {
   color: var(--textColor)
 }
 
+.diff-textarea-small {
+  height: 5rem;
+  width: 95%;
+  padding: 0.375rem 0.75rem;
+  border-radius: var(--borderRadius);
+  background: var(--backgroundColor);
+  border: 1px solid var(--grey-200);
+  color: var(--textColor)
+}
+
+.diff-textarea-big {
+  height: 15rem;
+  width: 95%;
+  padding: 0.375rem 0.75rem;
+  border-radius: var(--borderRadius);
+  background: var(--backgroundColor);
+  border: 1px solid var(--grey-200);
+  color: var(--textColor)
+}
+
 .diff-diff-textarea {
+  height: 20rem;
+  width: 95%;
+  padding: 0.375rem 0.75rem;
+  border-radius: var(--borderRadius);
+  background: var(--backgroundColor);
+  border: 1px solid var(--grey-200);
+  color: var(--textColor)
+}
+
+.diff-diet-textarea {
   height: 15rem;
   width: 95%;
   padding: 0.375rem 0.75rem;
