@@ -37,7 +37,8 @@ const getAllFollowupPapers = async (req, res) => {
 
     if (followupQueryName) {
         queryObject.$or = [
-            { followup_name: { $regex: followupQueryName, $options: 'i' } }
+            { followup_name: { $regex: followupQueryName, $options: 'i' } },
+            { followup_lastname: { $regex: followupQueryName, $options: 'i' } }
         ]
         console.log(queryObject);
     }
@@ -79,7 +80,7 @@ const updateFollowupPaper = async (req, res) => {
     }
 
     const followup_date = new Date().toJSON().slice(0, 10)
-    if(req.body.followup_date){
+    if (req.body.followup_date) {
         req.body.followup_date = followup_date
     }
 

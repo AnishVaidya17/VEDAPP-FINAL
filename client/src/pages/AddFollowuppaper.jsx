@@ -178,7 +178,7 @@ const AddFollowuppaper = () => {
                         id="followup_lakshan"
                         cols="70"
                         rows="25"
-                        className='form-textarea'
+                        className='form-textarea-followup-big'
                      // value={followup_lakshan}
                      // onChange={handleFollowupPaperInput}
                      >
@@ -195,7 +195,7 @@ const AddFollowuppaper = () => {
                         id="followup_chikitsa"
                         cols="70"
                         rows="25"
-                        className='form-textarea'
+                        className='form-textarea-followup-big'
                      // value={followup_chikitsa}
                      // onChange={handleFollowupPaperInput}
                      >

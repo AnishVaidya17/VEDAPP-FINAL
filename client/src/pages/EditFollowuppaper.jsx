@@ -140,7 +140,7 @@ const EditFollowuppaper = () => {
                         id="followup_lakshan"
                         cols="70"
                         rows="25"
-                        className='form-textarea'
+                        className='form-textarea-followup-big'
                         defaultValue={followuppaper.followup_lakshan}
                      >
                      </textarea>
@@ -156,7 +156,7 @@ const EditFollowuppaper = () => {
                         id="followup_chikitsa"
                         cols="70"
                         rows="25"
-                        className='form-textarea'
+                        className='form-textarea-followup-big'
                         defaultValue={followuppaper.followup_chikitsa}
                      >
                      </textarea>

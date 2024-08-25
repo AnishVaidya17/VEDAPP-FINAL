@@ -287,6 +287,18 @@ ul {
 .form-select {
   width: 100%;
   padding: 0.375rem 0.75rem;
+  font-size: medium;
+  border-radius: var(--borderRadius);
+  background: var(--backgroundColor);
+  border: 1px solid var(--grey-200);
+  color: var(--textColor)
+}
+
+.form-textarea-followup-big {
+  height: 20rem;
+  padding: 0.375rem 0.75rem;
+  width: 100%;
+  font-size: larger;
   border-radius: var(--borderRadius);
   background: var(--backgroundColor);
   border: 1px solid var(--grey-200);
@@ -323,6 +335,7 @@ ul {
   height: 5rem;
   width: 95%;
   padding: 0.375rem 0.75rem;
+  font-size:0.95rem;
   border-radius: var(--borderRadius);
   background: var(--backgroundColor);
   border: 1px solid var(--grey-200);
@@ -333,6 +346,7 @@ ul {
   height: 15rem;
   width: 95%;
   padding: 0.375rem 0.75rem;
+  font-size:1rem;
   border-radius: var(--borderRadius);
   background: var(--backgroundColor);
   border: 1px solid var(--grey-200);
@@ -363,6 +377,7 @@ ul {
   height: 35px;
   width: 95%;
   padding: 0.375rem 0.75rem;
+  font-size: medium;
   border-radius: var(--borderRadius);
   background: var(--backgroundColor);
   border: 1px solid var(--grey-200);
