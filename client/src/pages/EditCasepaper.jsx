@@ -226,10 +226,8 @@ const EditCasepaper = () => {
             </div>
 
 
-            {/* EMPTY SPACE CODE */}
-            <div className="form-space">
-               <br />
-            </div>
+            <br />
+            <br />
 
             <div className="form-center">
                {/* pulse */}
@@ -279,17 +277,15 @@ const EditCasepaper = () => {
             </div>
 
 
-            {/* EMPTY SPACE CODE */}
-            <div className="form-space">
-               <br />
-            </div>
+            <br />
+            <br />
 
 
             {/* presentIllness */}
             <label type='text' name='presentIllness' className='form-label'>PresentIllness</label>
             <textarea
                name='presentIllness'
-               className='form-textarea-two'
+               className='form-textarea-big'
                rows={20}
                cols={100}
                defaultValue={casepaper.presentIllness}

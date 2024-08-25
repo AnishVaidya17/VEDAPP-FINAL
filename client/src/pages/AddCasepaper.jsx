@@ -53,11 +53,11 @@ const AddCasepaper = () => {
   const { casepaperNumber } = useLoaderData();
   console.log(casepaperNumber);
   let intValue = +casepaperNumber
-  let addedValue = intValue+1
+  let addedValue = intValue + 1
   let stringValue = addedValue.toString()
   console.log(addedValue);
-  
-  
+
+
 
   return (
     <Wrapper>
@@ -233,10 +233,8 @@ const AddCasepaper = () => {
         </div>
 
 
-        {/* EMPTY SPACE CODE */}
-        <div className="form-space">
-          <br />
-        </div>
+        <br />
+        <br />
 
         <div className="form-center">
           {/* pulse */}
@@ -290,17 +288,15 @@ const AddCasepaper = () => {
         </div>
 
 
-        {/* EMPTY SPACE CODE */}
-        <div className="form-space">
-          <br />
-        </div>
+        <br />
+        <br />
 
 
         {/* presentIllness */}
         <label type='text' name='presentIllness' className='form-label'>PresentIllness</label>
         <textarea
           name='presentIllness'
-          className='form-textarea-two'
+          className='form-textarea-big'
           rows={20}
           cols={100}
         ////value={presentIllness}
