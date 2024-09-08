@@ -25,7 +25,7 @@ export const action = async ({ request }) => {
    console.log(data);
    try {
       await customFetch.post('/followuppapers/', data);
-      toast.success('Added Followuppaper successfully');
+      toast.success('Added Followup Paper Successfully');
       window.focus();
       window.scroll(0, 0, "smooth")
       return redirect('/dashboard/all-followuppapers');
@@ -52,59 +52,11 @@ const AddFollowuppaper = () => {
 
 
 
-   //    const handleSubmit = (e) => {
-   //       e.preventDefault();
-
-   //       //edit followuppaper code, if isEditing is true, then, call editFollowuppaper ftn
-   //       if (isFollowupEditing) {
-   //          editFollowuppaper()
-   //          window.focus();
-   //          window.scroll(0, 0, "smooth")
-   //          return
-   //       }
-
-   //       if (!followup_date) {
-   //          displayAlert()
-   //          window.focus();
-   //          window.scroll(0, 0, "smooth")
-   //          return
-   //       }
-   //       else if (!followup_name) {
-   //          displayAlert()
-   //          window.focus();
-   //          window.scroll(0, 0, "smooth")
-   //          return
-   //       }
-
-   //       createFollowuppaper()
-   //       window.focus();
-   //       // window.scrollTo(0, 800);
-   //       window.scroll(0, 0, "smooth")
-   //       console.log('Followuppaper submitted!');
-   //       clearAlert()
-   //    }
-
-
-   //    //clear all values
-   //    const clearAll = (e) => {
-   //       e.preventDefault();
-   //       console.log('clear btn pressed');
-   //       clearValues()
-   //    }
-
 
    return (
       <Wrapper>
          <Form method='post' className='form'>
             <h2>Add Followup Paper</h2>
-
-
-            {/* printing chikitsa */}
-            {/* <div className="btn-print">
-               <Link to='/print-followup-chikitsa'>
-                  <button className='btn'>Print Chikitsa</button>
-               </Link>
-            </div> */}
 
             {/* EMPTY SPACE CODE */}
             <div className="form-space">

@@ -79,10 +79,10 @@ const updateFollowupPaper = async (req, res) => {
         throw new NotFoundError(`No followuppaper with id: ${followuppaperId}`)
     }
 
-    const followup_date = new Date().toJSON().slice(0, 10)
-    if (req.body.followup_date) {
-        req.body.followup_date = followup_date
-    }
+    // const followup_date = new Date().toJSON().slice(0, 10)
+    // if (req.body.followup_date) {
+    //     req.body.followup_date = followup_date
+    // }
 
     //update
     const updatedFollowuppaper = await FollowupPaper.findOneAndUpdate({ _id: followuppaperId }, req.body, {
