@@ -21,7 +21,7 @@ const SearchContainer = () => {
       clearTimeout(timeout);
       timeout = setTimeout(() => {
         onChange(form);
-      }, 1500);
+      }, 2000);
     };
   };
 

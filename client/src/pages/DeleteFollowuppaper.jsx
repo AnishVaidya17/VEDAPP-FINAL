@@ -8,7 +8,7 @@ import customFetch from '../utils/customFetch';
 export const action = async ({ params }) => {
     try {
        await customFetch.delete(`/followuppapers/${params.id}`);
-       toast.success('Followuppaper deleted successfully');
+       toast.success('Followup Paper Deleted Successfully');
     } catch (error) {
        toast.error(error?.response?.data?.msg);
     }
