@@ -6,6 +6,7 @@ import { Form, useNavigation, redirect } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import customFetch from '../utils/customFetch';
 import { useLoaderData } from 'react-router-dom';
+import timeCalculate from '../utils/calculateTime';
 
 //LOADER - GET HIGHEST CASEPAPER NUMBER 
 export const loader = async () => {
@@ -49,6 +50,8 @@ const AddCasepaper = () => {
     window.focus();
     window.scroll(0, 0, "smooth")
   }, [])
+
+  const calculatedTime = timeCalculate()
 
   const { casepaperNumber } = useLoaderData();
   console.log(casepaperNumber);
@@ -214,6 +217,18 @@ const AddCasepaper = () => {
               name='date'
               className='form-input'
               defaultValue={new Date().toJSON().slice(0, 10)}
+            ></input>
+          </div>
+
+
+          {/* time */}
+          <div className='form-row'>
+            <label type='text' name='time' className='form-label'>Time</label>
+            <input
+              type='text'
+              name='time'
+              className='form-input'
+              defaultValue={calculatedTime}
             ></input>
           </div>
 

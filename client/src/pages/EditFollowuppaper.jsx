@@ -95,7 +95,7 @@ const EditFollowuppaper = () => {
                <div className="form-center">
                   <div className="form-row">
                      {/* name */}
-                     <label type='text' name='followup_name' className='form-label'>Name</label>
+                     <label type='text' name='followup_name' className='form-label'>First Name</label>
                      <input
                         type='text'
                         name='followup_name'

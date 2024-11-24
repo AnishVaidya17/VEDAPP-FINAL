@@ -35,6 +35,7 @@ const CasepaperSchema = new mongoose.Schema({
         type: Date,
         // default: new Date().toJSON().slice(0,10)
     },
+    time: { type: String },
     casepaperNumber: { type: String },
 
     pulse: { type: String },

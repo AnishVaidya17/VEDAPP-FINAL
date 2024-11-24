@@ -202,6 +202,17 @@ const EditCasepaper = () => {
                      defaultValue={casepaper.date?.slice(0, 10)}
                   ></input>
                </div>
+               
+               {/* time */}
+               <div className='form-row'>
+                  <label type='text' name='time' className='form-label'>Time</label>
+                  <input
+                     type='text'
+                     name='time'
+                     className='form-input'
+                     defaultValue={casepaper.time}
+                  ></input>
+               </div>
 
 
                {/* casepapernumber */}

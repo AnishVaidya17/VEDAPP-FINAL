@@ -65,7 +65,7 @@ export const createCasepaper = async (req, res) => {
 
     const { name } = req.body
     if (!name) {
-        throw new BadRequestError('Please Provide Name!')
+        throw new BadRequestError('Please Provide First Name!')
     }
 
     req.body.createdBy = req.user.userId;
