@@ -35,10 +35,11 @@ if (process.env.NODE_ENV === 'development') {
 
 app.use(express.static(path.resolve(__dirname, './client/dist')));
 
-//basic-route
-app.get('/', (req, res) => {
-  res.send('Hello World');
-});
+import helmet from 'helmet';
+import mongoSanitize from 'express-mongo-sanitize';
+app.use(helmet());
+app.use(mongoSanitize());
+
 
 //testname-route
 app.post('/api/v1/testname', (req, res) => {
