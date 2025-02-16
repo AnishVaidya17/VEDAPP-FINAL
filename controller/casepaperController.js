@@ -26,7 +26,7 @@ export const getAllCasepapers = async (req, res) => {
     const page = Number(req.query.page) || 1;
     const limit = Number(req.query.limit) || 10;
     const skip = (page - 1) * limit;
-    const casepapers = await Casepaper.find(queryObject).skip(skip).sort({ date: 'desc' }).limit(limit)
+    const casepapers = await Casepaper.find(queryObject).skip(skip).sort({ date: 'desc' })
 
     const totalCasepapers = await Casepaper.countDocuments(queryObject);
     const numOfPages = Math.ceil(totalCasepapers / limit);
