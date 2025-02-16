@@ -46,7 +46,7 @@ const getAllFollowupPapers = async (req, res) => {
     const page = Number(req.query.page) || 1;
     const limit = Number(req.query.limit) || 10;
     const skip = (page - 1) * limit;
-    const followuppapers = await FollowupPaper.find(queryObject).skip(skip).sort({ followup_date: 'desc' }).limit(limit)
+    const followuppapers = await FollowupPaper.find(queryObject).skip(skip).sort({ followup_date: 'desc' })
     const totalFollowuppapers = await FollowupPaper.countDocuments(queryObject);
     const numOfPages = Math.ceil(totalFollowuppapers / limit);
     res.status(StatusCodes.OK).json({ totalFollowuppapers: totalFollowuppapers, followuppapers })
