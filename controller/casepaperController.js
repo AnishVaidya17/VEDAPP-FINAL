@@ -7,20 +7,27 @@ import NotFoundError from '../errors/not-found.js';
 //GET CASEPAPERS
 export const getAllCasepapers = async (req, res) => {
 
-    const { queryName } = req.query
-    console.log(queryName);
+    const { queryFirstName, queryMiddleName, queryLastName } = req.query
 
     const queryObject = {
         createdBy: req.user.userId,
     };
 
-    if (queryName) {
-        queryObject.$or = [
-            { name: { $regex: queryName, $options: 'i' } },
-            { lastname: { $regex: queryName, $options: 'i' } },
-            {casepaperNumber: {$regex: queryName, $options: 'i'}}
-        ]
-        console.log(queryObject);
+    const queryConditions = [];
+
+    if (queryFirstName) {
+        queryConditions.push({ name: { $regex: queryFirstName, $options: 'i' } });
+    }
+    if (queryMiddleName) {
+        queryConditions.push({ middlename: { $regex: queryMiddleName, $options: 'i' } });
+    }
+    if (queryLastName) {
+        queryConditions.push({ lastname: { $regex: queryLastName, $options: 'i' } });
+    }
+
+    if (queryConditions.length > 0) {
+        console.log(queryConditions);
+        queryObject.$and = queryConditions;
     }
 
     const page = Number(req.query.page) || 1;
@@ -50,11 +57,11 @@ export const getCasepaper = async (req, res) => {
 export const getHighestCasepaperNumber = async (req, res) => {
     const casepapers = await Casepaper.findOne({}).sort({ casepaperNumber: -1 })
     let casepaper = casepapers
-    if(casepapers){
+    if (casepapers) {
         res.status(StatusCodes.OK).json({ casepaper })
     }
     else {
-        res.status(StatusCodes.OK).json({casepaper:0})
+        res.status(StatusCodes.OK).json({ casepaper: 0 })
     }
 };
 

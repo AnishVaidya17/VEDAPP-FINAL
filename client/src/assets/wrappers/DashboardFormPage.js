@@ -90,11 +90,22 @@ const Wrapper = styled.section`
       height: 35px;
     }
   }
+  .btn-container-search {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1rem;
+    row-gap: 1rem;
+    align-self: flex-end;
+    margin-top: 0.5rem;
+    button {
+      height: 35px;
+    }
+  }
   .clear-btn {
     background: var(--grey-500);
   }
   .clear-btn:hover {
-    background: var(--black);
+    background: var(--grey-800);
   }
 
   .followupbtn {

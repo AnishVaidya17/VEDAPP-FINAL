@@ -28,19 +28,29 @@ const createFollowupPaper = async (req, res) => {
 //GET ALL FOLLOWUPPAPERS
 const getAllFollowupPapers = async (req, res) => {
 
-    const { followupQueryName } = req.query
-    console.log(followupQueryName);
+    const { followupQueryFirstName, followupQueryMiddleName, followupQueryLastName } = req.query
 
     const queryObject = {
         createdBy: req.user.userId,
     };
 
-    if (followupQueryName) {
-        queryObject.$or = [
-            { followup_name: { $regex: followupQueryName, $options: 'i' } },
-            { followup_lastname: { $regex: followupQueryName, $options: 'i' } }
-        ]
-        console.log(queryObject);
+    const queryConditions = []
+
+    if (followupQueryFirstName) {
+        queryConditions.push({ followup_name: { $regex: followupQueryFirstName, $options: 'i' } });
+    }
+
+    if (followupQueryMiddleName) {
+        queryConditions.push({ followup_middlename: { $regex: followupQueryMiddleName, $options: 'i' } });
+    }
+
+    if (followupQueryLastName) {
+        queryConditions.push({ followup_lastname: { $regex: followupQueryLastName, $options: 'i' } });
+    }
+
+    if (queryConditions.length > 0) {
+        console.log(queryConditions);
+        queryObject.$and = queryConditions;
     }
 
     const page = Number(req.query.page) || 1;
