@@ -7,27 +7,9 @@ import { createJWT } from '../utils/tokenUtils.js';
 
 
 
-//DOCUMENT NUMBER CHECKING
-// import { MongoClient } from "mongodb";
-// const uri = 'mongodb+srv://anish17vaidya:AnishVedApp@vedapp.iqupbgk.mongodb.net/'
-// const client = new MongoClient(uri);
-
-
-
-
-
 
 //REGISTER
 const register = async (req, res, next) => {
-
-    // const database = client.db("VEDAPP_SECOND");
-    // const users = database.collection("users");
-    // const estimate = await users.estimatedDocumentCount();
-    // console.log('The number of documents are: ', estimate)
-    // //if more than 3 documents in the users collection, then not allowed
-    // if (estimate >= 3) {
-    //     throw new NoMoreUsersAllowed('No more users allowed!')
-    // }
 
     const docs = await User.countDocuments();
     if (docs >= 3) {
