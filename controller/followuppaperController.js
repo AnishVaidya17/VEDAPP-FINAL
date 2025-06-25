@@ -28,7 +28,10 @@ const createFollowupPaper = async (req, res) => {
 //GET ALL FOLLOWUPPAPERS
 const getAllFollowupPapers = async (req, res) => {
 
-    const { followupQueryFirstName, followupQueryMiddleName, followupQueryLastName } = req.query
+    // const { followupQueryFirstName, followupQueryMiddleName, followupQueryLastName } = req.query
+    const followupQueryFirstName = req.query.followupQueryFirstName ? req.query.followupQueryFirstName.trim() : '';
+    const followupQueryMiddleName = req.query.followupQueryMiddleName ? req.query.followupQueryMiddleName.trim() : '';
+    const followupQueryLastName = req.query.followupQueryLastName ? req.query.followupQueryLastName.trim() : '';
 
     const queryObject = {
         createdBy: req.user.userId,
@@ -49,7 +52,6 @@ const getAllFollowupPapers = async (req, res) => {
     }
 
     if (queryConditions.length > 0) {
-        console.log(queryConditions);
         queryObject.$and = queryConditions;
     }
 
@@ -60,7 +62,6 @@ const getAllFollowupPapers = async (req, res) => {
     const totalFollowuppapers = await FollowupPaper.countDocuments(queryObject);
     const numOfPages = Math.ceil(totalFollowuppapers / limit);
     res.status(StatusCodes.OK).json({ totalFollowuppapers: totalFollowuppapers, followuppapers })
-    //res.send(`Get all Followuppapers`)
 }
 
 
