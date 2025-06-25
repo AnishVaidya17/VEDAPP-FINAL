@@ -10,7 +10,6 @@ const FP_SearchContainer = () => {
 
    const { searchValues } = useAllFollowuppapersContext()
    const { followupQueryFirstName, followupQueryMiddleName, followupQueryLastName } = searchValues
-   console.log(searchValues);
 
    const submit = useSubmit();
 

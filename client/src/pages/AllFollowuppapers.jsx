@@ -17,7 +17,6 @@ export const loader = async ({ request }) => {
 
    try {
       const { data } = await customFetch.get('/followuppapers', { params: params });
-      // console.log(data);
       return {
          data,
          searchValues: { ...params }
@@ -34,7 +33,6 @@ const AllFollowuppapersContext = createContext();
 const AllFollowuppapers = () => {
 
    const { data, searchValues } = useLoaderData();
-   console.log(data);
 
    return (
       <>
