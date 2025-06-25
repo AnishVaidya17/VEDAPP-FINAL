@@ -10,7 +10,6 @@ const SearchContainer = () => {
 
    const { searchValues } = useAllCasepapersContext()
    const { queryFirstName, queryMiddleName, queryLastName } = searchValues
-   console.log(searchValues);
 
    const submit = useSubmit();
 

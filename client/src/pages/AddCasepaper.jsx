@@ -54,12 +54,9 @@ const AddCasepaper = () => {
   const calculatedTime = timeCalculate()
 
   const { casepaperNumber } = useLoaderData();
-  console.log(casepaperNumber);
   let intValue = +casepaperNumber
   let addedValue = intValue + 1
   let stringValue = addedValue.toString()
-  console.log(addedValue);
-
 
 
   return (

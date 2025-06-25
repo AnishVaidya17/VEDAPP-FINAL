@@ -7,7 +7,11 @@ import NotFoundError from '../errors/not-found.js';
 //GET CASEPAPERS
 export const getAllCasepapers = async (req, res) => {
 
-    const { queryFirstName, queryMiddleName, queryLastName } = req.query
+    // const { queryFirstName, queryMiddleName, queryLastName } = req.query
+    const queryFirstName = req.query.queryFirstName ? req.query.queryFirstName.trim() : '';
+    const queryMiddleName = req.query.queryMiddleName ? req.query.queryMiddleName.trim() : '';
+    const queryLastName = req.query.queryLastName ? req.query.queryLastName.trim() : '';
+
 
     const queryObject = {
         createdBy: req.user.userId,
