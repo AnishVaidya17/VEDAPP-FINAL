@@ -14,7 +14,7 @@ export const loader = async () => {
     const { data } = await customFetch.get(`/casepapers/add-casepaper`);
     return data.casepaper;
   } catch (error) {
-    toast.error(error.response.data.msg);
+    toast.error(error.response.data.msg, { autoClose: 1500 });
     return redirect('/dashboard/');
   }
 }
@@ -27,12 +27,12 @@ export const action = async ({ request }) => {
   //console.log(data);
   try {
     await customFetch.post('/casepapers/', data);
-    toast.success('Added Casepaper successfully');
+    toast.success('Added Casepaper successfully', { autoClose: 1000 });
     window.focus();
     window.scroll(0, 0, "smooth")
     return redirect('/dashboard');
   } catch (error) {
-    toast.error(error?.response?.data?.msg);
+    toast.error(error?.response?.data?.msg, { autoClose: 1500 });
     console.log(error);
     return error;
   }
