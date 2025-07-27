@@ -45,7 +45,7 @@ const Dashboard = () => {
   const logoutUser = async () => {
     navigate('/');
     await customFetch.get('/auth/logout');
-    toast.info('Logging out...')
+    toast.info('Logged out...', { autoClose: 1000 });
   };
 
   return (

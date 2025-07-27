@@ -13,10 +13,10 @@ export const action = async ({ request }) => {
    const data = Object.fromEntries(formData)
    try {
       await customFetch.post('/auth/register', data);
-      toast.success('Registration successful');
+      toast.success('Registration successful', { autoClose: 1200 });
       return redirect('/login');
    } catch (error) {
-      toast.error(error?.response?.data?.msg);
+      toast.error(error?.response?.data?.msg, {autoClose: 1500});
       console.log(error);
       return error;
    }
@@ -41,7 +41,7 @@ const Register = () => {
                   name='name'
                   className='form-input check'
                   required={true}
-               
+
                // onChange={handleChange}
                ></input>
             </div>
@@ -53,7 +53,7 @@ const Register = () => {
                   name='lastname'
                   className='form-input check'
                   required={true}
-               
+
                // onChange={handleChange}
                ></input>
             </div>
@@ -64,7 +64,7 @@ const Register = () => {
                   type='text'
                   name='location'
                   className='form-input check'
-               
+
                // onChange={handleChange}
                ></input>
             </div>
@@ -77,7 +77,7 @@ const Register = () => {
                   name='email'
                   className='form-input check'
                   required={true}
-               
+
                // onChange={handleChange}
                ></input>
             </div>
@@ -89,7 +89,7 @@ const Register = () => {
                   name='password'
                   className='form-input check'
                   required={true}
-               
+
                // onChange={handleChange}
                ></input>
             </div>

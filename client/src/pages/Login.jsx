@@ -13,13 +13,16 @@ export const action = async ({ request }) => {
 
    try {
       await customFetch.post('/auth/login', data);
-      toast.success('Login successful');
+      toast.success('Login successful', { autoClose: 1000 });
       return redirect('/dashboard');
    } catch (error) {
-      toast.error(error?.response?.data?.msg);
+      toast.error(error?.response?.data?.msg, { autoClose: 1500 });
+      setTimeout(() => {
+         window.location.reload();
+      }, 1500)
       return error;
    }
-}
+};
 
 //MAIN LOGIN FUNCTION
 const Login = () => {
@@ -37,7 +40,6 @@ const Login = () => {
                   type='email'
                   name='email'
                   className='form-input check'
-                  
                ></input>
             </div>
 
@@ -47,7 +49,6 @@ const Login = () => {
                   type='password'
                   name='password'
                   className='form-input check'
-                  
                ></input>
             </div>
 

@@ -7,9 +7,9 @@ import customFetch from '../utils/customFetch';
 export const action = async ({ params }) => {
    try {
       await customFetch.delete(`/casepapers/${params.id}`);
-      toast.success('Casepaper deleted successfully');
+      toast.success('Casepaper deleted successfully', { autoClose: 1000 });
    } catch (error) {
-      toast.error(error?.response?.data?.msg);
+      toast.error(error?.response?.data?.msg, { autoClose: 1500 });
    }
    return redirect('/dashboard/');
 }
