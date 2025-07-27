@@ -26,13 +26,13 @@ export const loader = async ({ params }) => {
 export const action = async ({ request, params }) => {
   const formData = await request.formData()
   const data = Object.fromEntries(formData)
-  
+
   try {
     await customFetch.patch(`/users/update-user/${params.id}`, data);
-    toast.success('User edited successfully');
+    toast.success('User edited successfully', { autoClose: 1000 });
     return redirect('/dashboard/profile');
   } catch (error) {
-    toast.error(error?.response?.data?.msg);
+    toast.error(error?.response?.data?.msg, { autoClose: 1500 });
     return error;
   }
 };

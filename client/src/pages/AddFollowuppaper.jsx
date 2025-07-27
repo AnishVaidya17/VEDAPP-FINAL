@@ -1,13 +1,3 @@
-// import React from 'react'
-
-// const AddFollowuppaper = () => {
-//   return (
-//     <div>AddFollowuppaper</div>
-//   )
-// }
-
-// export default AddFollowuppaper
-
 
 import React, { useEffect } from 'react'
 import Wrapper from '../assets/wrappers/DashboardFormPage'
@@ -25,17 +15,16 @@ export const action = async ({ request }) => {
    console.log(data);
    try {
       await customFetch.post('/followuppapers/', data);
-      toast.success('Added Followup Paper Successfully');
+      toast.success('Added Followup Paper Successfully', { autoClose: 1000 });
       window.focus();
       window.scroll(0, 0, "smooth")
       return redirect('/dashboard/all-followuppapers');
    } catch (error) {
-      toast.error(error?.response?.data?.msg);
+      toast.error(error?.response?.data?.msg, { autoClose: 1500 });
       console.log(error);
       return error;
    }
 }
-
 
 
 
@@ -49,7 +38,6 @@ const AddFollowuppaper = () => {
       window.focus();
       window.scroll(0, 0, "smooth")
    }, [])
-
 
 
 
