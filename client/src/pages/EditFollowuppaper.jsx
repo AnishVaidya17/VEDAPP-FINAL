@@ -57,12 +57,6 @@ const EditFollowuppaper = () => {
          <Form method='post' className='form'>
             <h2>Edit Followup Paper</h2>
 
-            {/* EMPTY SPACE CODE
-                <div className="form-space">
-                    <br />
-                </div> */}
-
-
             {/* printing chikitsa */}
             <div className="btn-print">
                <Link to={`/print-followuppaper-chikitsa/${followuppaper._id}`}>
@@ -133,7 +127,7 @@ const EditFollowuppaper = () => {
                   {/* lakshan */}
                   <div>
                      <div className="form-row">
-                        <h5>Lakshan</h5>
+                        <h5>लक्षण / Signs and Symptoms</h5>
                      </div>
                      <textarea
                         name="followup_lakshan"
@@ -149,7 +143,7 @@ const EditFollowuppaper = () => {
                   {/* chikitsa */}
                   <div>
                      <div className="form-row">
-                        <h5>Chikitsa</h5>
+                        <h5>चिकित्सा / Treatment</h5>
                      </div>
                      <textarea
                         name="followup_chikitsa"
