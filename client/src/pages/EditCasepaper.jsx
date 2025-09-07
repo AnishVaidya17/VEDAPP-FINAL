@@ -202,7 +202,7 @@ const EditCasepaper = () => {
                      defaultValue={casepaper.date?.slice(0, 10)}
                   ></input>
                </div>
-               
+
                {/* time */}
                <div className='form-row'>
                   <label type='text' name='time' className='form-label'>Time</label>
@@ -225,15 +225,6 @@ const EditCasepaper = () => {
                      defaultValue={casepaper.casepaperNumber}
                   ></input>
                </div>
-
-
-
-               {/* <div className='form-row'>
-               </div>
-               <div className='form-row'>
-               </div> */}
-
-
             </div>
 
 
@@ -243,7 +234,7 @@ const EditCasepaper = () => {
             <div className="form-center">
                {/* pulse */}
                <div className="form-row">
-                  <label type='text' name='pulse' className='form-label'>Nadi/Pulse</label>
+                  <label type='text' name='pulse' className='form-label'>नाडी / Pulse</label>
                   <input
                      type='text'
                      name='pulse'
@@ -277,7 +268,7 @@ const EditCasepaper = () => {
 
                {/* respiration */}
                <div className="form-row">
-                  <label type='text' name='respiration' className='form-label'>respiration</label>
+                  <label type='text' name='respiration' className='form-label'>श्वसनम् / Respiration</label>
                   <input
                      type='text'
                      name='respiration'
@@ -293,7 +284,7 @@ const EditCasepaper = () => {
 
 
             {/* presentIllness */}
-            <label type='text' name='presentIllness' className='form-label'>PresentIllness</label>
+            <label type='text' name='presentIllness' className='form-label'>वर्तमान व्याधी वृत्त / Present Illness</label>
             <textarea
                name='presentIllness'
                className='form-textarea-big'
@@ -303,7 +294,7 @@ const EditCasepaper = () => {
             ></textarea>
 
             {/* chestExam */}
-            <label type='text' name='chestExam' className='form-label'>Chest Exam</label>
+            <label type='text' name='chestExam' className='form-label'>उर: परीक्षण / Chest Exam</label>
             <textarea
                name='chestExam'
                className='form-textarea-small'
@@ -313,7 +304,7 @@ const EditCasepaper = () => {
             ></textarea>
 
             {/* abdominalExam */}
-            <label type='text' name='abdominalExam' className='form-label'>Abdominal Exam </label>
+            <label type='text' name='abdominalExam' className='form-label'>उदर परीक्षण / Abdominal Exam</label>
             <textarea
                name='abdominalExam'
                className='form-textarea-small'
@@ -342,15 +333,7 @@ const EditCasepaper = () => {
             {/* HETU */}
             <div className="diff-hetu">
                <div className="form-row">
-                  <label type='text' name='hetu' className='form-label'>Hetu</label>
-                  {/* <textarea
-						name='hetu'
-						className='diff-textarea'
-						rows={20}
-						cols={100}
-						//value={hetu}
-						//onChange={handleCasepaperInput}
-					></textarea> */}
+                  <label type='text' name='hetu' className='form-label'>हेतु / Hetu</label>
                   <div className="form-row">
                      <input
                         type='text'
@@ -369,15 +352,7 @@ const EditCasepaper = () => {
             <div className="diff-center">
                {/* DOOSHYA */}
                <div className='form-row'>
-                  <label type='text' name='dooshya' className='form-label'>Dooshya</label>
-                  {/* <textarea
-							name='dooshya'
-							className='diff-textarea'
-							rows={20}
-							cols={100}
-							//value={dooshya}
-							onChange={handleCasepaperInput}
-						></textarea> */}
+                  <label type='text' name='dooshya' className='form-label'>दूष्यं / Dooshya</label>
                   <input
                      type='text'
                      name='dooshya'
@@ -388,15 +363,7 @@ const EditCasepaper = () => {
 
                {/* DOSH */}
                <div className='form-row'>
-                  <label type='text' name='dosh' className='form-label'>dosh</label>
-                  {/* <textarea
-							name='dosh'
-							className='diff-textarea'
-							rows={20}
-							cols={100}
-							//value={dosh}
-							//onChange={handleCasepaperInput}
-						></textarea> */}
+                  <label type='text' name='dosh' className='form-label'>दोषं / Dosh</label>
                   <input
                      type='text'
                      name='dosh'
@@ -408,7 +375,7 @@ const EditCasepaper = () => {
 
 
             {/* NIDAN */}
-            <label type='text' name='nidan' className='form-label'>Nidan/Diagnosis</label>
+            <label type='text' name='nidan' className='form-label'>निदानं / Diagnosiss</label>
             <div className="diff-center">
                <div className="form-row">
                   <input
@@ -432,15 +399,7 @@ const EditCasepaper = () => {
             {/* AVASTHA */}
             <div className="diff-avastha">
                <div className="form-row">
-                  <label type='text' name='avastha' className='form-label'>Avastha</label>
-                  {/* <textarea
-						name='avastha'
-						className='diff-textarea'
-						rows={20}
-						cols={100}
-						//value={avastha}
-						//onChange={handleCasepaperInput}
-					></textarea> */}
+                  <label type='text' name='avastha' className='form-label'>अवस्था / Avastha</label>
                   <input
                      type='text'
                      name='avastha'
@@ -454,15 +413,7 @@ const EditCasepaper = () => {
             {/* CHIKITSATATVA */}
             <div className="diff-chikitsatatva">
                <div className="form-row">
-                  <label type='text' name='chikitsaTatva' className='form-label'>ChikitsaTatva</label>
-                  {/* <textarea
-						name='chikitsaTatva'
-						className='diff-textarea'
-						rows={20}
-						cols={100}
-						//value={chikitsaTatva}
-						//onChange={handleCasepaperInput}
-					></textarea> */}
+                  <label type='text' name='chikitsaTatva' className='form-label'>चिकित्सा तत्व / ChikitsaTatva</label>
                   <input
                      type='text'
                      name='chikitsaTatva'
@@ -475,7 +426,7 @@ const EditCasepaper = () => {
 
             {/* CHIKITSA */}
             <div className="form-row">
-               <label type='text' name='chikitsa' className='form-label'>Chikitsa</label>
+               <label type='text' name='chikitsa' className='form-label'>चिकित्सा / Chikitsa</label>
                <textarea
                   name='chikitsa'
                   className='diff-textarea-big'
@@ -499,10 +450,10 @@ const EditCasepaper = () => {
             </div>
 
             {/* DONTS */}
-            <h4 className='diff-h4'>Don'ts</h4>
+            <h4 className='diff-h4'>अपथ्य / Don'ts</h4>
             <div className="diff-diet-center">
                <div className="form-row">
-                  <label type='text' name='dontdiet' className='form-label'>Diet</label>
+                  <label type='text' name='dontdiet' className='form-label'>आहार / Diet</label>
                   <textarea
                      name='dontDiet'
                      className='diff-textarea-small'
@@ -513,7 +464,7 @@ const EditCasepaper = () => {
                </div>
 
                <div className="form-row">
-                  <label type='text' name='dontRoutine' className='form-label'>Routine</label>
+                  <label type='text' name='dontRoutine' className='form-label'>विहार / Routine</label>
                   <textarea
                      name='dontRoutine'
                      className='diff-textarea-small'
@@ -526,10 +477,10 @@ const EditCasepaper = () => {
 
 
             {/* DOs */}
-            <h4 className='diff-h4'>Dos</h4>
+            <h4 className='diff-h4'>पथ्य / Dos</h4>
             <div className="diff-diet-center">
                <div className="form-row">
-                  <label type='text' name='dodiet' className='form-label'>Diet</label>
+                  <label type='text' name='dodiet' className='form-label'>आहार / Diet</label>
                   <textarea
                      name='doDiet'
                      className='diff-textarea-small'
@@ -540,7 +491,7 @@ const EditCasepaper = () => {
                </div>
 
                <div className="form-row">
-                  <label type='text' name='doRoutine' className='form-label'>Routine</label>
+                  <label type='text' name='doRoutine' className='form-label'>विहार / Routine</label>
                   <textarea
                      name='doRoutine'
                      className='diff-textarea-small'
@@ -564,9 +515,9 @@ const EditCasepaper = () => {
 
 
 
-            {/* SANPRAPTI */}
+            {/* SAMPRAPTI */}
             <div className="form-row">
-               <label type='text' name='sanprapti' className='form-label'>Sanprapti</label>
+               <label type='text' name='sanprapti' className='form-label'>सम्प्राप्ती / Samprapti</label>
                <textarea
                   name='sanprapti'
                   className='diff-textarea-small'
@@ -593,8 +544,6 @@ const EditCasepaper = () => {
                >
                   {isSubmitting ? 'submitting...' : 'submit'}
                </button>
-
-               {/* <button className='btn btn-block clear-btn'>Clear All</button> */}
             </div>
 
 
