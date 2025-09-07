@@ -11,11 +11,18 @@ const Wrapper = styled.section`
   }
 
   .casepaper-submit {
-    display: grid;
+    display: flex;
     align-items: center;
     justify-content: center;
     font-size: large;
+    width: 100%;
     background-color: var(--primary-700);
+  }
+
+  .caseSubmit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .casepaper-submit:hover {

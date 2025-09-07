@@ -1,9 +1,6 @@
 
 import React, { useEffect } from 'react'
 import Wrapper from '../assets/wrappers/DashboardFormPage'
-// import { useAppContext } from '../../context/appContext'
-// import { Alert } from '../../components/index.js'
-import { Link } from 'react-router-dom'
 import { Form, useNavigation, redirect } from 'react-router-dom';
 import customFetch from '../utils/customFetch';
 import { toast } from 'react-toastify';
@@ -76,8 +73,6 @@ const AddFollowuppaper = () => {
                         name='followup_name'
                         className='form-input followupinput'
                         required={true}
-                     // value={followup_name}
-                     // onChange={handleFollowupPaperInput}
                      ></input>
                   </div>
 
@@ -88,8 +83,6 @@ const AddFollowuppaper = () => {
                         type='text'
                         name='followup_middlename'
                         className='form-input followupinput'
-                     // value={followup_middlename}
-                     // onChange={handleFollowupPaperInput}
                      ></input>
                   </div>
 
@@ -100,8 +93,6 @@ const AddFollowuppaper = () => {
                         type='text'
                         name='followup_lastname'
                         className='form-input followupinput'
-                     // value={followup_lastname}
-                     // onChange={handleFollowupPaperInput}
                      ></input>
                   </div>
                </div>
@@ -111,7 +102,7 @@ const AddFollowuppaper = () => {
                   {/* lakshan */}
                   <div>
                      <div className="form-row">
-                        <h5>Lakshan</h5>
+                        <h5>लक्षण / Signs and Symptoms</h5>
                      </div>
                      <textarea
                         name="followup_lakshan"
@@ -119,8 +110,6 @@ const AddFollowuppaper = () => {
                         cols="70"
                         rows="25"
                         className='form-textarea-followup-big'
-                     // value={followup_lakshan}
-                     // onChange={handleFollowupPaperInput}
                      >
                      </textarea>
                   </div>
@@ -128,7 +117,7 @@ const AddFollowuppaper = () => {
                   {/* chikitsa */}
                   <div>
                      <div className="form-row">
-                        <h5>Chikitsa</h5>
+                        <h5>चिकित्सा / Treatment</h5>
                      </div>
                      <textarea
                         name="followup_chikitsa"
@@ -136,8 +125,6 @@ const AddFollowuppaper = () => {
                         cols="70"
                         rows="25"
                         className='form-textarea-followup-big'
-                     // value={followup_chikitsa}
-                     // onChange={handleFollowupPaperInput}
                      >
                      </textarea>
                   </div>
